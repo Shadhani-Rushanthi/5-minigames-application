@@ -1,0 +1,221 @@
+body {
+  background-color: #64c2f8; /* Set the background color */
+  font-family: Arial, sans-serif;
+}
+
+#game-container {
+  background-color: #fff; /* Set the background color for the game container */
+  padding: 20px; /* Add padding to the game container */
+  border-radius: 5px; /* Add border radius for a rounded appearance */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for depth */
+}
+@media (max-width: 768px) {
+  body {
+    justify-content: flex-start;
+  }
+}
+h1 {
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;;
+}
+#canvas-container {
+  margin-top: 20px; /* Add margin top for spacing */
+}
+
+#question-container {
+  margin-bottom: 20px; /* Add margin bottom for spacing */
+  background-color: #4388e2; /* Set the background color for the question container */
+  padding: 20px; /* Add padding to the question container */
+  border-radius: 5px; /* Add border radius for a rounded appearance */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a box shadow for depth */
+}
+
+#result-container {
+  margin-top: 5px; /* Add margin top for spacing */
+  text-align: center; /* Align the text to the center */
+  position: absolute; /* Position the container absolutely */
+  top: 40%; /* Move the container to the middle vertically */
+  left: 50%; /* Move the container to the middle horizontally */
+  transform: translate(-50%, -50%); /* Adjust the position to center the container */
+  padding: 40px;
+  font-size: 20px; 
+  line-height: 1.5;
+}
+
+
+
+#next-level-button {
+  display: none; /* Hide the "Next Level" button initially */
+  margin-top: 20px; /* Add margin top for spacing */
+  text-align: center; /* Align the text to the center */
+  position: absolute; /* Position the container absolutely */
+  top: 50%; /* Move the container to the middle vertically */
+  left: 50%; /* Move the container to the middle horizontally */
+  transform: translate(-50%, -50%); 
+  margin-right: 10px;
+  background-color: #fa0404; /* Change the background color of the button */
+  color: #ffffff; /* Change the text color of the button */
+  width: 200px; /* Adjust the width to resize the button */
+  height: 50px;
+  border-radius: 10px; 
+  font-size: 18px; 
+}
+
+#cities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Add margin bottom for spacing between questions */
+}
+
+#cities div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: bold;  /* Add margin bottom for spacing between questions */
+}
+
+#cities div input {
+  width: 150px; /* Increase the width to enlarge the answer boxes */
+  height: 30px; /* Increase the height to enlarge the answer boxes */
+  font-size: 16px; /* Increase the font size to enlarge the text in the answer boxes */
+  margin-right: 20px;
+}
+
+#button-container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#button-container button {
+  margin-right: 10px;
+  background-color: #096177; /* Change the background color of the button */
+  color: #ffffff; /* Change the text color of the button */
+  width: 200px; /* Adjust the width to resize the button */
+  height: 50px;
+  border-radius: 10px; 
+  margin-right: 10px;
+
+  padding: 12px 24px; /* Adjust padding to resize the button */
+  font-size: 18px; 
+}
+
+#menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4388e2;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  color: #fff;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+#name-input {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#name {
+  width: 300px;
+  height: 40px;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+#enter-game-button {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #096177;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#enter-game-button:hover {
+  background-color: #064e5e;
+}
+
+#menu-container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+#menu-container::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border: 4px solid #4388e2;
+  border-radius: 15px;
+  z-index: -2;
+}
+
+#menu-heading{
+
+  margin-top: 50px; /* Add margin top for spacing */
+  text-align: center; /* Align the text to the center */
+  position: absolute; /* Position the container absolutely */
+  top: 10%; /* Move the container to the middle vertically */
+  
+}
+
+    /* Add CSS styles for the score containers */
+    .score-container {
+      background-color: #f5f5f5;
+      border: 2px solid #ddd;
+      padding: 10px;
+      width: 200px;
+      position: absolute;
+      top: 40%;
+      right: 5%
+      
+    }
+
+    .eachscore-Container {
+      background-color: #ffcc99;
+      border: 2px solid #ff9933;
+      padding: 10px;
+      float: right;
+      clear: right;
+      width: 200px;
+      position: absolute;
+      top: 20%;
+      right: 5%
+     
+    }

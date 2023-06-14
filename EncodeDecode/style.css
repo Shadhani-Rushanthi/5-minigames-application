@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+/* font-family: 'Source Code Pro', monospace; */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("./bg.png");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    gap: 30px;
+}
+
+.start-game{
+    width: 100vw;
+    height: 100vh;
+    /* display: none; */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('./bg.png');
+    z-index: 1000;
+}
+
+
+.name-container{
+    width: 50%;
+    height: 50%;
+    flex-direction: column;
+    background-size: cover;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.846);
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    gap: 48px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.name{
+    font-size: 1.5rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#name-input{
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-family: 'Source Code Pro', monospace;
+    border-radius: 10px;
+    margin-left: 32px;
+    background-color: rgba(167, 161, 154, 0.659);
+}
+
+#start{
+    background-color: rgba(167, 161, 154, 0.659);
+}
+
+.word-type{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+
+.types-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.types{
+    background-color: #2E0249;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+
+
+.notification{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    /* color: white; */
+    padding: 16px;
+    font-size: 1.5rem;
+}
+
+
+.board{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(240, 221, 12, 0.715);
+    height: 700px;
+    gap: 64px;
+    padding: 32px;
+    border-radius: 20px;
+}
+
+.wordContainer{
+    flex: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.top{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.randomString{
+    font-size: 2.5rem;
+    /* background-color: rgb(253, 219, 0); */
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: 500;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.selectedWord{
+    width: 100%;
+}
+
+a{
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.desc{
+    font-size: 2rem;
+    font-weight: normal;
+    color: black;
+}
+
+.word{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.letter{
+    font-size: 2.5rem;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 50px;
+    border: none;
+    height: 50px;
+}
+
+.huffcode{
+    flex: 1;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-container{
+    display: flex;
+    z-index: 999;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: #2E0249;
+    background-color: #ffffffbb;
+    cursor: pointer;
+    z-index: 999;
+    width: fit-content;
+    margin: 10px;
+}
+
+
+.btn:hover{
+    background-color: whitesmoke;
+}
+
+.winner-message{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(113, 113, 113, 0.736);
+    /* background-image: url("./Untitled.png"); */
+    /* background: transparent; */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.winner-message>div{
+    width: 50vw;
+    height: 700px;
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.844);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    
+}
+
+.msg{    
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.257);
+    color: #2e0249; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ballons{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.ballon{
+    visibility: hidden;
+}
+.ballon>i{
+    text-shadow: 3px 3px 3px rgb(0, 0, 0);
+    font-size: 2rem;
+}
+
+.ballon:nth-child(7){
+    animation: moveBallon 5s ease-out 0s infinite backwards;
+    color: #2E0249;
+
+}
+.ballon:nth-child(4){
+    animation: moveBallon2 5s ease 1.5s infinite backwards;
+    color: #A91079;
+}
+.ballon:nth-child(9){
+    animation: moveBallon 5s ease 3s infinite backwards;
+    color: #570A57;
+}
+.ballon:nth-child(8){
+    animation: moveBallon2 5s ease 4.5s infinite backwards;
+    color: #EFEFEF;
+}
+.ballon:nth-child(10){
+    animation: moveBallon 5s ease 6s infinite backwards;
+    color: #A91079;
+}
+.ballon:nth-child(5){
+    animation: moveBallon 5s ease 7.5s infinite backwards;
+    color: #2E0249;
+}
+.ballon:nth-child(1){
+    animation: moveBallon2 5s ease 9s infinite backwards;
+    color: #F806CC;
+}
+.ballon:nth-child(2){
+    animation: moveBallon2 5s ease 10.5s infinite backwards;
+    color: #EFEFEF;
+}
+.ballon:nth-child(6){
+    animation: moveBallon2 5s ease 12s infinite backwards;
+    color: #570A57;
+}
+.ballon:nth-child(3){
+    animation: moveBallon2 5s ease 12s infinite backwards;
+    color: #F806CC;
+}
+@keyframes moveBallon {
+    0%   { transform:translate(0px,0px);}
+    10% {visibility: visible; }
+    100% { transform:translate(100px, 700px);
+        visibility: visible;}
+  }
+
+  @keyframes moveBallon2 {
+    0%   { transform:translate(0px,0px);}
+    10% {visibility: visible; }
+    90%{visibility: hidden;}
+    100% { transform:translate(-100px, 700px);}
+  }

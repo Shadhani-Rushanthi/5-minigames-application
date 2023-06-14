@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dijkstra's Algorithm Game</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="menu-container">
+    <h1 id="menu-heading">Welcome to Dijkstra's Algorithm Game</h1>
+    <div id="name-input">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name">
+    </div>
+    <button id="enter-game-button" onclick="startGameMenu()">Enter Game</button>
+  </div>
+
+  <div id="game-container" style="display: none;">
+    <h1>Dijkstra's Algorithm Game</h1>
+    <select id="start-city"></select>
+    <button id="try-again-button" onclick="resetAnswers(); startGame();">Reset Graph Style</button>
+
+    <div id="canvas-container">
+      <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+    
+    <!-- Move the score containers to the right side -->
+    <div class="score-container">
+      <h2>Overall Score</h2>
+      <div id="score-container"></div>
+    </div>
+    
+    <div class="eachscore-Container">
+      <h2>Individual Scores</h2>
+      <div id="eachscore-Container"></div>
+    </div>
+
+    <div id="question-container">
+      <h2>Find the shortest path and distance for the following cities:</h2>
+      <div id="cities"></div>
+    </div>
+    <div id="button-container">
+      <button onclick="checkAnswers()">Check Answers</button>
+      <button id="backButton"><a href="../index.php">Main Menu</a></button>
+    </div>
+  </div>
+
+  <div id="result-container"></div>
+  <button id="next-level-button" onclick="nextLevel()">Next Level</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

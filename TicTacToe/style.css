@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+/* font-family: 'Source Code Pro', monospace; */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("./Untitled.png");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    gap: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.start-game{
+    width: 100vw;
+    height: 100vh;display: none;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('./Untitled.png');
+    z-index: 1000;
+}
+
+.name-container{
+    width: 50%;
+    height: 50%;
+    flex-direction: column;
+    background-size: cover;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.419);
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    gap: 48px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.name{
+    font-size: 1.5rem;
+}
+
+#name-input{
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-family: 'Source Code Pro', monospace;
+    border-radius: 10px;
+    margin-left: 32px;
+}
+
+.notification{    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    padding: 16px;
+    font-size: 1.5rem;
+}
+
+.userDetails{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Source Code Pro', monospace;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+}
+
+.user{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.644);
+    font-family: 'Source Code Pro', monospace;
+    color: whitesmoke;
+}
+
+.board{
+    width: 600px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.273);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.409);
+}
+
+.cell{
+    border: 1px solid #2e0249;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 7rem;
+    font-weight: bold;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transition: all .2s;
+    text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.634);
+    /* text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.644); */
+    color: #2e0249;
+}
+
+.cell:hover{
+    background-color: rgba(255, 255, 255, 0.361);
+}
+
+.selected{
+    background-color: rgba(255, 255, 255, 0.361);
+    pointer-events: none;
+}
+
+.disable-cells{
+    pointer-events: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9){
+    border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7){
+    border-left: none;
+}
+
+.btn-container{
+    z-index: 999;
+
+}
+
+.btn{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: #2E0249;
+    background-color: #ffffffbb;
+    cursor: pointer;
+    z-index: 999;
+    margin: 10px;
+}
+
+
+.btn:hover{
+    background-color: whitesmoke;
+}
+
+.winner-message{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(113, 113, 113, 0.736);
+    /* background-image: url("./Untitled.png"); */
+    /* background: transparent; */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.winner-message>div{
+    width: 50vw;
+    height: 700px;
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.844);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    
+}
+
+.msg{    
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.257);
+    color: #2e0249;
+    animation: textBlink 3s ease 0s infinite backwards;
+}
+
+.ballons{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.ballon{
+    visibility: hidden;
+}
+.ballon>i{
+    text-shadow: 3px 3px 3px rgb(0, 0, 0);
+    font-size: 2rem;
+}
+
+.ballon:nth-child(7){
+    animation: moveBallon 5s ease-out 0s infinite backwards;
+    color: #2E0249;
+
+}
+.ballon:nth-child(4){
+    animation: moveBallon2 5s ease 1.5s infinite backwards;
+    color: #A91079;
+}
+.ballon:nth-child(9){
+    animation: moveBallon 5s ease 3s infinite backwards;
+    color: #570A57;
+}
+.ballon:nth-child(8){
+    animation: moveBallon2 5s ease 4.5s infinite backwards;
+    color: #EFEFEF;
+}
+.ballon:nth-child(10){
+    animation: moveBallon 5s ease 6s infinite backwards;
+    color: #A91079;
+}
+.ballon:nth-child(5){
+    animation: moveBallon 5s ease 7.5s infinite backwards;
+    color: #2E0249;
+}
+.ballon:nth-child(1){
+    animation: moveBallon2 5s ease 9s infinite backwards;
+    color: #F806CC;
+}
+.ballon:nth-child(2){
+    animation: moveBallon2 5s ease 10.5s infinite backwards;
+    color: #EFEFEF;
+}
+.ballon:nth-child(6){
+    animation: moveBallon2 5s ease 12s infinite backwards;
+    color: #570A57;
+}
+.ballon:nth-child(3){
+    animation: moveBallon2 5s ease 12s infinite backwards;
+    color: #F806CC;
+}
+@keyframes moveBallon {
+    0%   { transform:translate(0px,0px);}
+    10% {visibility: visible; }
+    100% { transform:translate(100px, 700px);
+        visibility: visible;}
+  }
+
+  @keyframes moveBallon2 {
+    0%   { transform:translate(0px,0px);}
+    10% {visibility: visible; }
+    90%{visibility: hidden;}
+    100% { transform:translate(-100px, 700px);}
+  }
+
+  @keyframes textBlink {
+    0%   { transform: scale(0) ; color: #F806CC;}
+    50% {transform:  scale(1.5); color: #2E0249; }
+    100% { transform: scale(0) ; color: #EFEFEF;}
+  }
